@@ -2,13 +2,10 @@ from utils import file_to_lines
 
 
 def solve(elfs):
-    sums_kcal = set(sum([int(val) for val in elf.split(' ')]) for elf in elfs)
-    total = 0
-    for n in range(3):
-        elf = max(sums_kcal)
-        total += elf
-        sums_kcal.discard(elf)
-    return total
+    sums_kcal = sorted(
+        sum([int(kcal_value) for kcal_value in elf.split(" ")]) for elf in elfs
+    )
+    return sum(sums_kcal[-3:])
 
 
 if __name__ == "__main__":
