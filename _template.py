@@ -6,4 +6,4 @@ def solve(rows):
 
 
 if __name__ == "__main__":
-    print(solve(file_to_lines(day=1)))
+    print(solve(file_to_lines(day=None)))
