@@ -1,4 +1,4 @@
-def file_to_lines(day, separate_with_empty=False):
+def file_to_lines(day, separate_with_empty=False, strip_lines=True):
     if day is None:
         raise AttributeError('you forgot about the day... again!')
     lines = []
@@ -15,7 +15,7 @@ def file_to_lines(day, separate_with_empty=False):
         for line in file:
             line_stripped = line.strip()
             if len(line_stripped):
-                current_row.append(line_stripped)
+                current_row.append(line_stripped if strip_lines else line)
             else:
                 # we found an empty line
                 row_joined = ' '.join(current_row)
